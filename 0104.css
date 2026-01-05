@@ -23,3 +23,63 @@
 .box3 {
   background-color: blue;
 }
+/* 달력 css */
+.calendarBox {
+  width: 280px;
+  margin: 20px;
+}
+
+/* 달력 전체 */
+.ui-datepicker {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 14px;
+}
+
+/* 상단 년/월 */
+.ui-datepicker-header {
+  background: #f7f7f7;
+  border-radius: 4px;
+  padding: 6px 0;
+  margin-bottom: 6px;
+}
+
+/* 이전/다음 버튼 */
+.ui-datepicker-prev,
+.ui-datepicker-next {
+  top: 6px;
+}
+
+/* 요일 */
+.ui-datepicker th {
+  font-weight: 500;
+  color: #666;
+  padding: 6px 0;
+}
+
+/* 날짜 셀 */
+.ui-datepicker td a {
+  text-align: center;
+  padding: 6px 0;
+  border-radius: 4px;
+  color: #333;
+}
+
+/* hover */
+.ui-datepicker td a:hover {
+  background: #f0f0f0;
+}
+
+/* 오늘 */
+.ui-datepicker-today a {
+  border: 1px solid #ccc;
+}
+
+/* 선택된 날짜 */
+.ui-datepicker-current-day a {
+  background: #333;
+  color: #fff;
+}

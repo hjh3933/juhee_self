@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>비동기처리</title>
+  </head>
+  <body>
+    <h2>동기와 비동기</h2>
+    <p>동기: 어떤 코드가 있을 때 순서대로 진행됨</p>
+    <p>비동기: 순서대로 진행되지 않고 먼저 읽힌 코드가 먼저 실행</p>
+    <p>js는 동기적인 언어 but 비동기적으로 특정코드 처리</p>
+    <p style="font-weight: bold">why?</p>
+    <p>
+      서버로 데이터 요청시 동기처리라면 실행 -> 기다리며 웹을 실행하는데
+      수십분이 걸릴 수도 있음, 다른코드를 먼저 실행하면서 기다릴 수 있도록
+      비동기적 처리함
+    </p>
+    <div>
+      <ol>
+        <span>비동기 처리방법</span>
+        <li>callback함수</li>
+        <li>promise</li>
+        <li>async/await</li>
+      </ol>
+    </div>
+  </body>
+</html>

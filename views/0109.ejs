@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>0109_form</title>
+    <!-- axios cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <h3>GET 요청</h3>
@@ -33,5 +35,36 @@
     <p>promise 기반</p>
     <p>모듈설치후 cdn 적용</p>
     <p>axios({method, url, params/data}).then()</p>
+    <p>페이지 이동없이 js가 요청을 만들어서 데이터 전송가능</p>
+    <p>
+      ex) function login() 함수를 만들고 안에서 document 요소들을 받아 axios로
+      전송, 성공시 특정 페이지 이동 실패시 alert창 띄우도록 설정가능, onclick
+      이벤트와 함수 연결하여 데이터 전송 가능
+    </p>
+    <h3>AXIOS 요청</h3>
+    <div>
+      <input type="text" placeholder="ID" name="id" id="axios_id" />
+      <input type="password" placeholder="PW" name="pw" id="axios_pw" />
+      <input type="button" value="제출" onclick="login()" />
+    </div>
+    <script>
+      function login() {
+        const id = document.getElementById("axios_id").value;
+        const pw = document.getElementById("axios_pw").value;
+
+        axios({
+          url: "http://localhost:8080/post_axios",
+          method: "post",
+          data: { id: id, pw: pw },
+        })
+          .then((res) => {
+            console.log(res.data);
+            alert(`전송 성공!! ${res.data.result}`);
+          })
+          .catch(() => {
+            alert("전송 실패ㅠㅠ");
+          });
+      }
+    </script>
   </body>
 </html>

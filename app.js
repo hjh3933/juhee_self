@@ -44,3 +44,7 @@ app.post("/postForm", function (req, res) {
     userInfo: req.body,
   });
 });
+app.post("/post_axios", function (req, res) {
+  console.log(req.body);
+  res.send({ result: "success" });
+});

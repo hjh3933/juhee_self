@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>0109_form</title>
+  </head>
+  <body>
+    <h3>GET 요청</h3>
+    <div>
+      <form action="/getForm" method="get">
+        <input type="text" placeholder="ID" name="id" />
+        <input type="password" placeholder="PW" name="pw" />
+        <input type="submit" value="제출" />
+      </form>
+    </div>
+    <h3>POST 요청</h3>
+    <div>
+      <form action="/postForm" method="post">
+        <input type="text" placeholder="ID" name="id" />
+        <input type="password" placeholder="PW" name="pw" />
+        <input type="submit" value="제출" />
+      </form>
+    </div>
+    <h3>JSON</h3>
+    <p>
+      JavaScript Object Notation: {"key": value} 형태로 클라이언트와 서버가
+      데이터를 주고받는 형식
+    </p>
+    <p>JSON.parse(): JSON 문자열을 JS객체로 변환</p>
+    <p>JSON.stringify(): JS객체를 JSON 문자열로 변환</p>
+    <h3>Axios</h3>
+    <p>promise 기반</p>
+    <p>모듈설치후 cdn 적용</p>
+    <p>axios({method, url, params/data}).then()</p>
+  </body>
+</html>

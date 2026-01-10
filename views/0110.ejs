@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>multer</title>
+    <!-- axios cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <h3>Multer 파일 업로드</h3>
+      <!-- enctype="multipart/form-data" 있어야 업로드 가능 -->
+      <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="userfile" /><br />
+        <input type="text" name="title" /><br /><br />
+        <button type="submit">업로드</button>
+      </form>
+    </div>
+    <div>
+      <h3>여러 파일 업로드</h3>
+      <!-- input multiple 속성 필수 -->
+      <form action="/upload/array" method="post" enctype="multipart/form-data">
+        <input type="file" name="userfiles" multiple /><br />
+        <input type="text" name="title" /><br /><br />
+        <button type="submit">업로드</button>
+      </form>
+    </div>
+    <div>
+      <h3>동적 파일 업로드</h3>
+      <input
+        type="file"
+        name="dynamic-userfile"
+        id="dynamic-file"
+        multiple
+      /><br />
+      <input type="text" name="title" /><br /><br />
+      <input type="button" value="업로드" id="btn" />
+    </div>
+    <div>
+      <img src="" alt="" width="200px" style="border-radius: 50%" />
+    </div>
+    <script>
+      const btn = document.getElementById("btn");
+      function fileUpload() {
+        const formData = new FormData();
+        const file = document.getElementById("dynamic-file");
+        formData.append("dynamic-userfile", file.files[0]);
+
+        axios({
+          method: "post",
+          url: "/dynamicFile",
+          data: formData,
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }).then((res) => {
+          console.log(res);
+          console.log(res.data);
+          console.log(res.data.filename);
+          document.querySelector("img").src = `../uploads/${res.data.filename}`;
+        });
+      }
+      btn.addEventListener("click", fileUpload);
+    </script>
+  </body>
+</html>

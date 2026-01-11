@@ -37,6 +37,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use("/uploads", express.static("uploads"));
 
+// router 설정
+const indexRouter = require("./routes");
+app.use("/", indexRouter);
+
 app.get("/", function (req, res) {
   // res.send("hello express");
   res.render("0110");

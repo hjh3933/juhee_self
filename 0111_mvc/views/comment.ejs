@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>comment</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <h1><%= commentInfo.userid %>님의 댓글입니다.</h1>
@@ -11,5 +12,22 @@
 
     <p>작성일: <%= commentInfo.date %></p>
     <p>댓글 내용: <%= commentInfo.comment %></p>
+    <input type="button" value="삭제" id="deleteBtn" />
+
+    <script>
+      const id = "<%= commentInfo.id %>";
+      document.getElementById("deleteBtn").addEventListener("click", () => {
+        const result = confirm("작성한 게시글을 삭제하시겠습니까?");
+        if (result) {
+          axios
+            .post("/deletecomment", {
+              id: id,
+            })
+            .then((res) => {
+              location.href = "/comments";
+            });
+        }
+      });
+    </script>
   </body>
 </html>

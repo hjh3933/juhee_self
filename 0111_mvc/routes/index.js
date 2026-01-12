@@ -6,5 +6,7 @@ const router = express.Router();
 router.get("/", controller.main);
 router.get("/comments", controller.comments);
 router.get("/comment/:id", controller.comment);
+router.post("/insertcomment", controller.insertcomment);
+router.post("/deletecomment", controller.deletecomment);
 
 module.exports = router;

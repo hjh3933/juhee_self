@@ -6,6 +6,18 @@ const path = require("path");
 const app = express();
 const PORT = 8080;
 
+const { sequelize } = require("./models");
+
+// sequelize 설정
+sequelize
+  .sync({ force: false })
+  .then(() => {
+    console.log("DB 연결 & 테이블 생성 완료");
+  })
+  .catch((err) => {
+    console.error("DB 연결 실패:", err);
+  });
+
 // multer 설정
 const uploadDetail = multer({
   storage: multer.diskStorage({

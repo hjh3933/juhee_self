@@ -7,5 +7,16 @@
   </head>
   <body>
     <h1>INDEX PAGE</h1>
+    <div>
+      <p>회원목록</p>
+      <table>
+      <% for (let i =0;i<users.length; i++) { %>
+        <tr>
+          <td>userid: <%= users[i].userid %></td>
+          <td>username: <%= users[i].username %></td>
+        </tr>
+      <% } %>
+      </table>
+    </div>
   </body>
 </html>

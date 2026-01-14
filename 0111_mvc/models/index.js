@@ -44,7 +44,14 @@ Object.keys(db).forEach((modelName) => {
   }
 });
 
+// 1. 연결등록
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
+// 2. 모델로드
+db.Users = require("./Users")(sequelize, Sequelize.DataTypes);
+
+// 3. 관계설정
+
+// 4. export(마지막)
 module.exports = db;

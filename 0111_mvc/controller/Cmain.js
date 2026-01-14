@@ -1,7 +1,16 @@
 const Comment = require("../model/Comment.js");
+const dp = require("../models");
+const Users = dp.Users;
 
-exports.main = (req, res) => {
-  res.render("index");
+exports.main = async (req, res) => {
+  // 회원목록 sequelize
+  try {
+    const users = await Users.findAll();
+    res.render("index", { users });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("DB error");
+  }
 };
 
 exports.comments = (req, res) => {

@@ -1,0 +1,68 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+a {
+  text-decoration: none;
+}
+
+/* header */
+.box {
+  height: 100px;
+  line-height: 100px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  background-color: rgb(179, 219, 255);
+}
+
+/* main이 남은 영역 전부 차지 */
+main {
+  flex: 1;
+  background-color: beige;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main > .container > p {
+  text-align: center;
+  font-weight: 600;
+}
+.loginBox,
+.joinBox {
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+}
+.loginBox,
+.joinBox > div:not(:last-child) {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px;
+}
+.loginBox,
+.joinBox > div:last-child {
+  text-align: center;
+}
+.loginBox,
+.joinBox > div:last-child > button {
+}
+
+.loginBox,
+.joinBox > div > label {
+  margin-right: 10px;
+}
+
+/* footer */
+footer {
+  height: 100px;
+  line-height: 100px;
+  background-color: pink;
+  text-align: center;
+}

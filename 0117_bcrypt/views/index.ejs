@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>index</title>
+    <link rel="stylesheet" href="/static/style/index.css" />
+  </head>
+  <body>
+    <header>
+      <div class="box">
+        <div>메인페이지</div>
+        <div><a href="/loginpage">로그인</a></div>
+        <div><a href="/joinpage">회원가입</a></div>
+        <div>00님 어서오세요</div>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <!-- 회원목록 -->
+        <p>회원목록</p>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+            </tr>
+            <% for (let i =0;i<users.length; i++) {%>
+            <tr>
+                <td><%= users[i].userid %></td>
+                <td><%= users[i].username %></td>
+            </tr>
+            <% } %>
+        </table>
+      </div>
+    </main>
+    <footer>
+        <div>footer영역입니다</div>
+    </footer>
+    <script>
+      function parseJwt(token) {
+  try {
+    const base64Url = token.split(".")[1];
+    const base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
+
+    const jsonPayload = decodeURIComponent(
+      atob(base64)
+        .split("")
+        .map((c) => "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2))
+        .join("")
+    );
+
+    return JSON.parse(jsonPayload);
+  } catch (e) {
+    return null;
+  }
+}
+
+
+      function updateHeader() {
+        const token = localStorage.getItem("token");
+        const headerDivs = document.querySelectorAll(".box > div");
+
+        const loginDiv = headerDivs[1];
+        const signupDiv = headerDivs[2];
+        const userDiv = headerDivs[3];
+
+        if (token) {
+          const decoded = parseJwt(token);
+
+          if (!decoded) return;
+
+          // 로그인 / 회원가입 숨김
+          loginDiv.innerHTML = `<a href="#" onclick="logout()">로그아웃</a>`;
+          signupDiv.style.display = "none";
+
+          // 사용자 이름 표시
+          userDiv.style.display = "block";
+          userDiv.innerText = `${decoded.username}님 어서오세요`;
+        } else {
+          // 비로그인 상태
+          loginDiv.innerHTML = `<a href="/loginpage">로그인</a>`;
+          signupDiv.style.display = "block";
+          userDiv.style.display = "none";
+        }
+      }
+
+      function logout() {
+        localStorage.removeItem("token");
+        location.href = "/";
+      }
+
+      // 페이지 로드 시 실행
+      updateHeader();
+    </script>
+  </body>
+</html>

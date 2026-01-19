@@ -40,21 +40,21 @@ main > .container > p {
   border-radius: 5px;
   padding: 10px;
 }
-.loginBox,
+.loginBox > div:not(:last-child),
 .joinBox > div:not(:last-child) {
   display: flex;
   justify-content: space-between;
   padding: 5px 10px;
 }
-.loginBox,
+.loginBox > div:last-child,
 .joinBox > div:last-child {
   text-align: center;
 }
-.loginBox,
+.loginBox > div:last-child > button,
 .joinBox > div:last-child > button {
 }
 
-.loginBox,
+.loginBox > div > label,
 .joinBox > div > label {
   margin-right: 10px;
 }

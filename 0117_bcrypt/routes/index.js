@@ -7,5 +7,6 @@ router.get("/", controller.main);
 router.get("/loginpage", controller.loginpage);
 router.get("/joinpage", controller.joinpage);
 router.post("/login", controller.login);
+router.post("/join", controller.join);
 
 module.exports = router;

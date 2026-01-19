@@ -1,5 +1,6 @@
 // import logo from './logo.svg';
 import "./App.css";
+import EventPrac from "./components/eventPrac";
 import { StatePrac1 } from "./components/practice1";
 import {
   PropsFuntion1,
@@ -18,6 +19,8 @@ function App() {
       <PropsFuntion3 weather="추워!!"></PropsFuntion3>
       <SayFuntion></SayFuntion>
       <StatePrac1></StatePrac1>
+      <hr></hr>
+      <EventPrac></EventPrac>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
 import EventPrac from './components/eventPrac';
+import { MemoPrac, ReducerPrac } from './components/hooks';
 import { LifecyclePrac1 } from './components/lifecycle';
 import { MapPrac, MapPrac2, MapPrac3 } from './components/map_filter';
 import { StatePrac1 } from './components/practice1';
@@ -26,9 +27,12 @@ function App() {
       <MapPrac2></MapPrac2> */}
       {/* <MapPrac3></MapPrac3> */}
       <p>Ref</p>
-      <RefPrac1></RefPrac1>
+      {/* <RefPrac1></RefPrac1>
       <RefPrac2></RefPrac2>
-      <LifecyclePrac1></LifecyclePrac1>
+      <LifecyclePrac1></LifecyclePrac1> */}
+      <p>Hooks</p>
+      <MemoPrac></MemoPrac>
+      <ReducerPrac></ReducerPrac>
     </div>
   );
 }

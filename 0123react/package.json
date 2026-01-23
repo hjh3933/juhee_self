@@ -1,5 +1,5 @@
 {
-  "name": "0119_react",
+  "name": "0123react",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -9,10 +9,7 @@
     "@testing-library/user-event": "^13.5.0",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
-    "react-hook-form": "^7.71.1",
     "react-scripts": "5.0.1",
-    "sass": "^1.97.3",
-    "styled-components": "^6.3.8",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

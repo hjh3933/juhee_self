@@ -1,5 +1,6 @@
-// import logo from './logo.svg';
-import './App.css';
+import logo from './logo.svg';
+// import './App.css';
+import { CssBasic, Sass, StyledComponent } from './components/cssBasic';
 import EventPrac from './components/eventPrac';
 import { MemoPrac, ReducerPrac } from './components/hooks';
 import { LifecyclePrac1 } from './components/lifecycle';
@@ -22,19 +23,79 @@ function App() {
       <hr></hr>
       <EventPrac></EventPrac> */}
       <hr></hr>
-      <p>0121_map and filter</p>
+      {/* <p>0121_map and filter</p> */}
       {/* <MapPrac></MapPrac>
       <MapPrac2></MapPrac2> */}
       {/* <MapPrac3></MapPrac3> */}
-      <p>Ref</p>
+      {/* <p>Ref</p> */}
       {/* <RefPrac1></RefPrac1>
       <RefPrac2></RefPrac2>
       <LifecyclePrac1></LifecyclePrac1> */}
-      <p>Hooks</p>
-      <MemoPrac></MemoPrac>
-      <ReducerPrac></ReducerPrac>
+      {/* <p>Hooks</p> */}
+      {/* <MemoPrac></MemoPrac>
+      <ReducerPrac></ReducerPrac> */}
+      <p>style</p>
+      <CssBasic></CssBasic>
+      <StyledComponent></StyledComponent>
+      <Sass></Sass>
     </div>
   );
 }
+
+// styled component 실습
+// import styled from 'styled-components';
+// function App() {
+//   const RootDiv = styled.div`
+//     text-align: center;
+//   `;
+//   const AppHeader = styled.header`
+//     background-color: #282c34;
+//     min-height: 100vh;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+//     font-size: calc(10px + 2vmin);
+//     color: white;
+//   `;
+//   const AppLogo = styled.img`
+//     height: 40vmin;
+//     pointer-events: none;
+//     @media (prefers-reduced-motion: no-preference) {
+//       & {
+//         animation: App-logo-spin infinite 20s linear;
+//       }
+//     }
+//     @keyframes App-logo-spin {
+//       from {
+//         transform: rotate(0deg);
+//       }
+//       to {
+//         transform: rotate(360deg);
+//       }
+//     }
+//   `;
+//   const MyA = styled.a`
+//     color: #61dafb;
+//   `;
+//   return (
+//     <RootDiv>
+//       <AppHeader>
+//         <AppLogo src={logo} alt="app" />
+//         <p>
+//           Edit <code>src/App.js</code> and save to reload.
+//         </p>
+//         <MyA
+//           className="App-link"
+//           href="https://reactjs.org"
+//           target="_blank"
+//           rel="noopener noreferrer"
+//         >
+//           Learn React
+//         </MyA>
+//       </AppHeader>
+//     </RootDiv>
+//   );
+// }
 
 export default App;

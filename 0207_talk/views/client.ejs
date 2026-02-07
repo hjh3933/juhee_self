@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="/socket.io/socket.io.js"></script>
+  </head>
+  <body>
+    <ul></ul>
+    <form id="chat">
+      <input type="text" id="user" placeholder="이름" />
+      <input type="text" id="message" placeholder="메시지" />
+      <button>채팅보내기</button>
+    </form>
+    <script>
+      const socket = io();
+      const chatForm = document.querySelector("#chat");
+      const ul = document.querySelector("ul");
+
+      chatForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const user = document.querySelector("#user");
+        const message = chatForm.querySelector("#message");
+
+        const data = {
+          name: user.value,
+          massage: massage.value,
+        };
+
+        // 전송한다
+        socket.emit("new_message", data);
+      });
+    </script>
+  </body>
+</html>

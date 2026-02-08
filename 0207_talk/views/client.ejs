@@ -11,7 +11,7 @@
     <form id="chat">
       <input type="text" id="user" placeholder="이름" />
       <input type="text" id="message" placeholder="메시지" />
-      <button>채팅보내기</button>
+      <button type="submit">채팅보내기</button>
     </form>
     <script>
       const socket = io();
@@ -25,11 +25,18 @@
 
         const data = {
           name: user.value,
-          massage: massage.value,
+          message: message.value,
         };
 
         // 전송한다
         socket.emit("new_message", data);
+      });
+
+      // 받는다
+      socket.on("message_render", (message) => {
+        const li = document.createElement("li");
+        li.innerText = `${message.name}: ${message.message}`;
+        ul.append(li);
       });
     </script>
   </body>

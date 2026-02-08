@@ -17,6 +17,9 @@ app.get("/", (req, res) => {
 io.on("connection", (socket) => {
   console.log("socket id:", socket.id);
   // 이벤트 받기 on(이벤트 이름, 데이터를받음)
+  socket.on("new_message", (message) => {
+    io.emit("message_render", message);
+  });
 });
 
 // 서버 열기

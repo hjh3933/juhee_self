@@ -1,0 +1,28 @@
+.headerContainer {
+  //   background-color: pink;
+  display: flex;
+  justify-content: space-between;
+  line-height: 100px;
+  border-bottom: 1px solid rgb(226, 226, 226);
+  margin-bottom: 20px;
+}
+.nBox1 {
+  .lMenu {
+    span:nth-of-type(1) {
+      a {
+        margin-right: 30px;
+      }
+    }
+    a {
+      font-weight: bold;
+    }
+  }
+}
+.nBox2 > .logo {
+  height: 100%;
+  a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+}

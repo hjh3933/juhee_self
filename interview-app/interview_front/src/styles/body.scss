@@ -20,3 +20,11 @@ a {
   text-decoration: none;
   color: rgb(101, 101, 101);
 }
+// 컨테이너 코드
+.pageContainer {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px 100px;
+}

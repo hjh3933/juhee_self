@@ -3,8 +3,7 @@ import "../styles/quizBox.scss";
 import { IoIosArrowForward } from "react-icons/io";
 import { IoIosArrowBack } from "react-icons/io";
 
-export function QuizBox({ quizData, prevQuiz, nextQuiz }) {
-  // category, quiz, answer, nowPage, totalPage
+export function QuizBox({ quizData, prevQuiz, nextQuiz, nowPage, totalPage }) {
   // 전체 문제 수와 현재 문제 위치 받기
   const [toggle, setToggle] = useState(true);
   return (
@@ -12,7 +11,7 @@ export function QuizBox({ quizData, prevQuiz, nextQuiz }) {
       <div className="qBoxTitle">
         <span>{quizData.category}</span>
         <span>
-          {quizData.nowPage} / {quizData.totalPage}
+          {nowPage} / {totalPage}
         </span>
       </div>
       <div className="qBoxContent">
@@ -28,7 +27,7 @@ export function QuizBox({ quizData, prevQuiz, nextQuiz }) {
         <div className="quizContainer">
           <div className="textBox">
             {toggle ? (
-              <span className="quiz">Q. {quizData.quiz}</span>
+              <span className="quiz">Q. {quizData.question}</span>
             ) : (
               <span className="answer">A. {quizData.answer}</span>
             )}

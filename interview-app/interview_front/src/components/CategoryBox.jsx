@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "../styles/categoryBox.scss";
 
-export function CategoryBox({ category }) {
+export function CategoryBox({ category, type, count }) {
   return (
     <Link to={`/category/${category}`} className="categoryLink">
       <div className="cBoxContainer">
@@ -11,8 +11,8 @@ export function CategoryBox({ category }) {
         <div className="cBox cBox2">
           <div className="lDetail detail">
             {/* 추후 props로 받아 변경 */}
-            <span>주관식</span>
-            <span>9문항</span>
+            <span>{type === "subjective" ? "주관식" : "객관식"}</span>
+            <span>{count} 문항</span>
           </div>
           <div className="RDetail detail">
             <span>⭐⭐⭐</span>

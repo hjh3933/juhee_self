@@ -7,7 +7,7 @@ export function Header() {
         <div className="nBox nBox1">
           <div className="lMenu">
             <span>
-              <a href="">Landom</a>
+              <a href="/category/random">Random</a>
             </span>
             <span>
               <a href="">Rank</a>

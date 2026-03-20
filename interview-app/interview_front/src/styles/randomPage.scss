@@ -1,0 +1,26 @@
+.nBox {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 50px;
+  h2 {
+    text-align: center;
+  }
+  .numBtn {
+    padding: 10px 20px;
+    &:not(:last-of-type) {
+      margin-right: 10px;
+    }
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+    transition: all 0.2s ease;
+    background: #587a65;
+    color: white;
+    &:hover {
+      cursor: pointer;
+      background: #425b4c;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    }
+  }
+}

@@ -11,5 +11,6 @@ const Cquiz = require("../controller/Cquiz");
 // route
 router.get("/category", Cquiz.getCategory);
 router.get("/quizzes/:category", Cquiz.getQuizzes);
+router.get("/randomQuizzes/:n", Cquiz.randomQuizzes);
 
 module.exports = router;

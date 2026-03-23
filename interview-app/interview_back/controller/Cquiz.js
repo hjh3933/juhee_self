@@ -31,3 +31,16 @@ exports.getQuizzes = async (req, res) => {
     res.status(500).send("server err");
   }
 };
+exports.randomQuizzes = async (req, res) => {
+  try {
+    const { n } = req.params;
+    const result = await model.Quizzes.findAll({
+      order: [[model.Sequelize.fn("RAND")]],
+      limit: parseInt(n),
+    });
+    res.status(200).send({ quizzes: result });
+  } catch (err) {
+    console.log("err", err);
+    res.status(500).send("server err");
+  }
+};

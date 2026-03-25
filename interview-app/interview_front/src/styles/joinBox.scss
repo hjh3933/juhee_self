@@ -1,0 +1,24 @@
+.jBoxContainer {
+  background-color: #f7f8f9;
+  min-width: 400px;
+  min-height: 250px;
+  border-radius: 5px;
+  display: flex;
+
+  .jBoxTop {
+    width: 100%;
+    .inputBox {
+      height: 30px;
+      line-height: 30px;
+      background-color: pink;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 20px;
+      input {
+        width: 70%;
+        border: none;
+        border-radius: 5px;
+      }
+    }
+  }
+}

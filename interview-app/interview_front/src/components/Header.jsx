@@ -25,7 +25,7 @@ export function Header() {
         <div className="nBox nBox3">
           <div className="rMenu">
             <span>
-              <a href="">Login</a> | <a href="">Join</a>
+              <a href="/joinpage/:login">Login</a> | <a href="/joinpage/:join">Join</a>
             </span>
           </div>
         </div>

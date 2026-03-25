@@ -3,6 +3,7 @@ import { HomePage } from "./pages/HomePage";
 import "./styles/body.scss";
 import { QuizPage } from "./pages/QuizPage";
 import { RandomPage } from "./pages/RandomPage";
+import { JoinPage } from "./pages/JoinPage";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Route path="/" element={<HomePage />} />
       <Route path="/category/:category" element={<QuizPage />} />
       <Route path="/category/random" element={<RandomPage />} />
+      <Route path="/joinpage" element={<JoinPage />} />
     </Routes>
   );
 }

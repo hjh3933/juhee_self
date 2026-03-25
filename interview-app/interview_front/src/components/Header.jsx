@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../styles/header.scss";
 
 export function Header() {
@@ -25,7 +26,7 @@ export function Header() {
         <div className="nBox nBox3">
           <div className="rMenu">
             <span>
-              <a href="/joinpage/:login">Login</a> | <a href="/joinpage/:join">Join</a>
+              <Link to="/joinpage/login">Login</Link> | <Link to="/joinpage/join">Join</Link>
             </span>
           </div>
         </div>

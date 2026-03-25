@@ -4,13 +4,15 @@
   min-height: 250px;
   border-radius: 5px;
   display: flex;
-
+  flex-direction: column;
+  justify-content: center;
   .jBoxTop {
     width: 100%;
+    margin-bottom: 10px;
     .inputBox {
       height: 30px;
       line-height: 30px;
-      background-color: pink;
+      // background-color: pink;
       display: flex;
       justify-content: space-between;
       padding: 10px 20px;
@@ -19,6 +21,36 @@
         border: none;
         border-radius: 5px;
       }
+    }
+  }
+  .jBoxMid {
+    width: 100%;
+    text-align: center;
+    button {
+      padding: 5px 20px;
+      font-size: 18px;
+      border-radius: 5px;
+      border: none;
+      transition: all 0.2s ease;
+      background: #587a65;
+      color: white;
+      &:hover {
+        cursor: pointer;
+        background: #425b4c;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+      }
+    }
+  }
+  .jBoxBot {
+    width: 100%;
+    text-align: center;
+    a {
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px; /* 아이콘-텍스트 간격 */
+      justify-content: center;
+      padding: 5px 0;
     }
   }
 }

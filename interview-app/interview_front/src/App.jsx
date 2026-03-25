@@ -11,7 +11,7 @@ function App() {
       <Route path="/" element={<HomePage />} />
       <Route path="/category/:category" element={<QuizPage />} />
       <Route path="/category/random" element={<RandomPage />} />
-      <Route path="/joinpage" element={<JoinPage />} />
+      <Route path="/joinpage/:option" element={<JoinPage />} />
     </Routes>
   );
 }

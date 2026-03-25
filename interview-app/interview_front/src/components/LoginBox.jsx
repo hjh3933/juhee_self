@@ -1,4 +1,7 @@
-export function LoginBox() {
+import { IoIosArrowForward } from "react-icons/io";
+import { Link } from "react-router-dom";
+
+export function LoginBox({ option }) {
   return (
     <>
       <div className="jBoxContainer">
@@ -11,15 +14,29 @@ export function LoginBox() {
             <label htmlFor="">PW</label>
             <input type="password" />
           </div>
-          <div className="inputBox">
-            <label htmlFor="">NAME</label>
-            <input type="text" />
-          </div>
+          {option === "join" ? (
+            <div className="inputBox">
+              <label htmlFor="">NAME</label>
+              <input type="text" />
+            </div>
+          ) : (
+            <></>
+          )}
+        </div>
+        <div className="jBoxMid">
+          {option === "join" ? <button>Join</button> : <button>Login</button>}
         </div>
         <div className="jBoxBot">
-          <span>
-            <a href="/joinpage">Login / Join</a>
-          </span>
+          {option === "join" ? (
+            <Link to="/joinpage/login">
+              <IoIosArrowForward className="icon" /> <span>Login</span>
+            </Link>
+          ) : (
+            <Link to="/joinpage/join">
+              <IoIosArrowForward className="icon" />
+              <span>Join</span>
+            </Link>
+          )}
         </div>
       </div>
     </>

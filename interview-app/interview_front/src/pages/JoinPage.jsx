@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Header } from "../components/Header";
-import { JoinBox } from "../components/JoinBox";
 import { LoginBox } from "../components/LoginBox";
 import "../styles/joinBox.scss";
 import { useParams } from "react-router-dom";

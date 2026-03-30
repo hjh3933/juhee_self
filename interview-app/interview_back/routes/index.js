@@ -7,10 +7,12 @@ dotenv.config();
 
 // controller
 const Cquiz = require("../controller/Cquiz");
+const Cuser = require("../controller/Cuser");
 
 // route
 router.get("/category", Cquiz.getCategory);
 router.get("/quizzes/:category", Cquiz.getQuizzes);
 router.get("/randomQuizzes/:n", Cquiz.randomQuizzes);
+router.post("/join", Cuser.joinUser);
 
 module.exports = router;

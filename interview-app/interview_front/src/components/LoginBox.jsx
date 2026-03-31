@@ -1,9 +1,10 @@
 import { IoIosArrowForward } from "react-icons/io";
-import { Link } from "react-router-dom";
+import { href, Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
 
 export function LoginBox({ option }) {
+  const navigate = useNavigate();
   const [mode, setMode] = useState(option);
   const [formData, setFormData] = useState({
     userid: "",
@@ -19,18 +20,24 @@ export function LoginBox({ option }) {
     }
     try {
       const res = await axios.post("/api-server/join", formData);
-      // console.log(res.data);
-      // 로그인 페이지로
-      setFormData({
-        userid: res.data.result.userid,
-        userpw: res.data.result.userpw,
-      });
       setMode("login");
     } catch (err) {
       console.log(err);
     }
   };
   // 로그인 api
+  const loginToPage = async () => {
+    try {
+      const res = await axios.post("/api-server/login", formData);
+      // console.log(res.data.token);
+      // token 로컬에 저장
+      localStorage.setItem("token", res.data.token);
+      // 메인페이지이동
+      navigate("/");
+    } catch (err) {
+      console.log(err);
+    }
+  };
   return (
     <>
       <div className="jBoxContainer">
@@ -65,7 +72,11 @@ export function LoginBox({ option }) {
           )}
         </div>
         <div className="jBoxMid">
-          {mode === "join" ? <button onClick={joinToPage}>Join</button> : <button>Login</button>}
+          {mode === "join" ? (
+            <button onClick={joinToPage}>Join</button>
+          ) : (
+            <button onClick={loginToPage}>Login</button>
+          )}
         </div>
         <div className="jBoxBot">
           {mode === "join" ? (

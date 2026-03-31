@@ -14,5 +14,6 @@ router.get("/category", Cquiz.getCategory);
 router.get("/quizzes/:category", Cquiz.getQuizzes);
 router.get("/randomQuizzes/:n", Cquiz.randomQuizzes);
 router.post("/join", Cuser.joinUser);
+router.post("/login", Cuser.loginUser);
 
 module.exports = router;

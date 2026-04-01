@@ -29,9 +29,10 @@ export function LoginBox({ option }) {
   const loginToPage = async () => {
     try {
       const res = await axios.post("/api-server/login", formData);
-      // console.log(res.data.token);
+      console.log(res.data);
       // token 로컬에 저장
       localStorage.setItem("token", res.data.token);
+      localStorage.setItem("userid", res.data.userid);
       // 메인페이지이동
       navigate("/");
     } catch (err) {
